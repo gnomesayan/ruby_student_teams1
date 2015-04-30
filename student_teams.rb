@@ -23,19 +23,21 @@ count = 0
 num_students = students.length 
 
 until count == num_students
-
-	if num_students%2 == 1
-		if count < num_students - 3
-			puts "#{students[count]} & #{students[count+1]}"
-		else
-			puts "#{students[count]},#{students[count+1]} & #{students[count+2]}"
-			break
-		end
+	if num_students == 1
+		puts "#{students[count]} is a team of one :-("
+		break
 	else
-		puts "#{students[count]} & #{students[count+1]}"
+		if num_students%2 == 1
+			if count < num_students - 3
+				puts "#{students[count]} & #{students[count+1]}"
+			else
+				puts "#{students[count]},#{students[count+1]} & #{students[count+2]}"
+				break
+			end
+		else
+			puts "#{students[count]} & #{students[count+1]}"
+		end
 	end
-
-
 
 	count += 2
 
